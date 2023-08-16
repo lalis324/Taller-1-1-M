@@ -62,9 +62,9 @@ public class calculadora {
             break;
             
         case 8:
-            System.out.println("numero del radical:");
-            int raiz=Scanner.nextInt();
-            resultados= (int) Math.pow(num1, 1/raiz);
+            System.out.println("Ingrese numero del indice:");
+            num2=Scanner.nextInt();
+            resultados= (int) Math.pow(num1, 1/num2);
             System.out.println("la raiz del numero es:"+(resultados));
             break;
             
@@ -76,11 +76,9 @@ public class calculadora {
             break;
             
         case 10:
-            System.out.println("numero para sacar el IVA:");
-            int iva=Scanner.nextInt();
             System.out.println("Porcentaje el IVA:");
-            int por=Scanner.nextInt();
-            resultados= iva*(por/100);
+            num2=Scanner.nextInt();
+            resultados= num1*(num2/100);
             System.out.println("El IVA es:"+(resultados));
             break;       
     }
@@ -99,4 +97,5 @@ public class calculadora {
          System.out.println("9. Potencia");
          System.out.println("10. IVA");  
     }
+
 }
