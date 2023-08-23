@@ -2,11 +2,15 @@
 package Calculadora;
 
 
+
+
+
+
 public class Guical extends javax.swing.JFrame {
 
-     int Num1;
-     int Num2;
-     String cal;
+     double Num1;
+     double Num2;
+     int cal;
 
     public Guical() {
         initComponents();
@@ -39,6 +43,7 @@ public class Guical extends javax.swing.JFrame {
         potencia = new javax.swing.JButton();
         raiz = new javax.swing.JButton();
         borrar = new javax.swing.JButton();
+        IVA1 = new javax.swing.JButton();
 
         IVA.setText("IVA");
         IVA.addActionListener(new java.awt.event.ActionListener() {
@@ -186,7 +191,7 @@ public class Guical extends javax.swing.JFrame {
             }
         });
 
-        raiz.setText("raiz");
+        raiz.setText("√ ");
         raiz.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 raizActionPerformed(evt);
@@ -200,57 +205,63 @@ public class Guical extends javax.swing.JFrame {
             }
         });
 
+        IVA1.setText("IVA");
+        IVA1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IVA1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Tan)
                             .addComponent(Cos)
                             .addComponent(Sin)
-                            .addComponent(potencia)
-                            .addComponent(borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(borrar, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(IVA1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Tan))
+                        .addGap(12, 12, 12)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(num7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(num4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(raiz, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(division, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(multi, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(igual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(num7, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(num4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(num1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(num5, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(num8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(num9, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(num6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addComponent(num0, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(igual, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(num8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(7, 7, 7)
+                                        .addComponent(potencia)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(num9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(num6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(num3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(raiz, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(suma, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(resta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(3, 3, 3))))
-                    .addComponent(texto, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                            .addComponent(resta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(suma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(multi, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(division, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -260,36 +271,37 @@ public class Guical extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(resta)
-                    .addComponent(multi)
-                    .addComponent(division)
                     .addComponent(borrar)
+                    .addComponent(potencia)
                     .addComponent(raiz))
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(suma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(num9)
-                            .addComponent(num8)
-                            .addComponent(num7, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(potencia))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(num6)
-                            .addComponent(num5)
-                            .addComponent(num4)
-                            .addComponent(Sin))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(num1)
-                            .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Cos))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Tan)
-                            .addComponent(num0)
-                            .addComponent(igual))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(num7)
+                        .addComponent(IVA1))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(num9)
+                        .addComponent(num8)))
+                .addGap(12, 12, 12)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(num6)
+                    .addComponent(num5)
+                    .addComponent(num4)
+                    .addComponent(Sin)
+                    .addComponent(multi))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Cos)
+                    .addComponent(num1)
+                    .addComponent(num2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(num3, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(division))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Tan)
+                    .addComponent(igual)
+                    .addComponent(num0))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -297,8 +309,8 @@ public class Guical extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void sumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumaActionPerformed
-       Num1 = Integer.parseInt(texto.getText());
-       cal = "+";
+       Num1 = Double.parseDouble(texto.getText());
+       cal = 4;
        texto.setText(" ");
     }//GEN-LAST:event_sumaActionPerformed
 
@@ -307,11 +319,16 @@ public class Guical extends javax.swing.JFrame {
     }//GEN-LAST:event_num8ActionPerformed
 
     private void TanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TanActionPerformed
-        // TODO add your handling code here:
+       Num1 = Double.parseDouble(texto.getText());
+       cal=7;
+       
+       texto.setText("tan("+Num1+")");
     }//GEN-LAST:event_TanActionPerformed
 
     private void raizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_raizActionPerformed
-        // TODO add your handling code here:
+       Num2 = Double.parseDouble(texto.getText());
+       cal=8;
+       texto.setText(" ");
     }//GEN-LAST:event_raizActionPerformed
 
     private void num0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_num0ActionPerformed
@@ -355,97 +372,120 @@ public class Guical extends javax.swing.JFrame {
     }//GEN-LAST:event_borrarActionPerformed
 
     private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
-       Num1 = Integer.parseInt(texto.getText());
-       cal = "/";
+       Num1 = Double.parseDouble(texto.getText());
+       cal =1;
        texto.setText(" ");
     }//GEN-LAST:event_divisionActionPerformed
 
     private void multiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiActionPerformed
-       Num1 = Integer.parseInt(texto.getText());
-       cal = "*";
+       Num1 = Double.parseDouble(texto.getText());
+       cal = 2;
        texto.setText(" ");
     }//GEN-LAST:event_multiActionPerformed
 
     private void restaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaActionPerformed
-       Num1 = Integer.parseInt(texto.getText());
-       cal = "-";
+       Num1 = Double.parseDouble(texto.getText());
+       cal = 3;
        texto.setText(" ");
     }//GEN-LAST:event_restaActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
-        Num2=Integer.parseInt(texto.getText());
+        
         
         switch (cal) {
-            case "/":
-                texto.setText(Integer.toString(Num1/Num2));
+            case 1:
+                Num2=Double.parseDouble(texto.getText());
+                texto.setText(Double.toString(Num1/Num2));
                 break;
                 
-             case "*":
-                texto.setText(Integer.toString(Num1*Num2));
+             case 2:
+                 Num2=Double.parseDouble(texto.getText());
+                texto.setText(Double.toString(Num1*Num2));
                 break;
                 
-            case "-":
-                texto.setText(Integer.toString(Num1-Num2));
+            case 3:
+                Num2=Double.parseDouble(texto.getText());
+                texto.setText(Double.toString(Num1-Num2));
                 break;
                 
-            case "+":
-                texto.setText(Integer.toString(Num1+Num2));
+            case 4:
+                Num2=Double.parseDouble(texto.getText());
+                texto.setText(Double.toString(Num1+Num2));
                 break;
                 
-            /*case "sin":
+            case 5:
+                texto.setText(" ");
+                texto.setText(Double.toString(Math.sin(Num1)));
                 
                 break;
                 
-            case "cos":
-                texto.setText(Integer.toString(Num1/Num2));
+            case 6:
+                texto.setText(" ");
+                texto.setText(Double.toString(Math.cos(Num1)));
                 break;
                 
-            case "tan":
-                texto.setText(Integer.toString(Num1/Num2));
+            case 7:
+                texto.setText(" ");
+                texto.setText(Double.toString(Math.tan(Num1)));
                 break;
                 
-             case "Potencia":
-                texto.setText(Integer.toString(Num1/Num2));
+             case 8:
+                Num1=Double.parseDouble(texto.getText());
+                texto.setText(Double.toString(Math.pow(Num1,1/ Num2)));
                 break;
                 
-            case "raiz":
-                texto.setText(Integer.toString(Num1/Num2));
+            case 9:
+                Num2=Double.parseDouble(texto.getText());
+                texto.setText(Double.toString(Math.pow(Num1,Num2)));
                 break;
-                
-            case "IVA":
-                texto.setText(Integer.toString(Num1/Num2));
-                break;*/
+            case 10:
+                Num1=Double.parseDouble(texto.getText());
+                texto.setText(Double.toString( Num1*(Num2/100)));
+                break;
         }
     }//GEN-LAST:event_igualActionPerformed
 
     private void potenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_potenciaActionPerformed
-        // TODO add your handling code here:
+        Num1 = Double.parseDouble(texto.getText());
+       cal =9;
+       texto.setText(" ");
     }//GEN-LAST:event_potenciaActionPerformed
 
     private void IVAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IVAActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_IVAActionPerformed
 
     private void CosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CosActionPerformed
-        // TODO add your handling code here:
+       Num1 = Double.parseDouble(texto.getText());
+       cal=6;
+       
+       texto.setText("Cos("+Num1+")");
     }//GEN-LAST:event_CosActionPerformed
 
     private void SinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SinActionPerformed
-        // TODO add your handling code here:
+       Num1 = Double.parseDouble(texto.getText());
+       cal=5;
+       
+       texto.setText("sin("+Num1+")");
     }//GEN-LAST:event_SinActionPerformed
+
+    private void IVA1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IVA1ActionPerformed
+       Num2 = Double.parseDouble(texto.getText());
+       cal=10;
+       texto.setText(" ");
+    }//GEN-LAST:event_IVA1ActionPerformed
 
     public static void main(String args[]) {
 
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Guical().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Guical().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Cos;
     private javax.swing.JButton IVA;
+    private javax.swing.JButton IVA1;
     private javax.swing.JButton Sin;
     private javax.swing.JButton Tan;
     private javax.swing.JButton borrar;
