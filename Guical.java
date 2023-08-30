@@ -310,7 +310,7 @@ public class Guical extends javax.swing.JFrame {
 
     private void sumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumaActionPerformed
        Num1 = Double.parseDouble(texto.getText());
-       cal = 4;
+       cal = 1;
        texto.setText(" ");
     }//GEN-LAST:event_sumaActionPerformed
 
@@ -373,74 +373,74 @@ public class Guical extends javax.swing.JFrame {
 
     private void divisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divisionActionPerformed
        Num1 = Double.parseDouble(texto.getText());
-       cal =1;
+       cal =4;
        texto.setText(" ");
     }//GEN-LAST:event_divisionActionPerformed
 
     private void multiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiActionPerformed
        Num1 = Double.parseDouble(texto.getText());
-       cal = 2;
+       cal = 3;
        texto.setText(" ");
     }//GEN-LAST:event_multiActionPerformed
 
     private void restaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restaActionPerformed
        Num1 = Double.parseDouble(texto.getText());
-       cal = 3;
+       cal = 2;
        texto.setText(" ");
     }//GEN-LAST:event_restaActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
-        
+             
         
         switch (cal) {
             case 1:
                 Num2=Double.parseDouble(texto.getText());
-                texto.setText(Double.toString(Num1/Num2));
+                texto.setText(Double.toString(metodoscal.suma(Num1,Num2)));
                 break;
                 
              case 2:
                  Num2=Double.parseDouble(texto.getText());
-                texto.setText(Double.toString(Num1*Num2));
+                texto.setText(Double.toString(metodoscal.resta(Num1,Num2)));
                 break;
                 
             case 3:
                 Num2=Double.parseDouble(texto.getText());
-                texto.setText(Double.toString(Num1-Num2));
+                texto.setText(Double.toString(metodoscal.multiplicacion(Num1,Num2)));
                 break;
                 
             case 4:
                 Num2=Double.parseDouble(texto.getText());
-                texto.setText(Double.toString(Num1+Num2));
+                texto.setText(Double.toString(metodoscal.Division(Num1,Num2)));
                 break;
                 
             case 5:
                 texto.setText(" ");
-                texto.setText(Double.toString(Math.sin(Num1)));
+                texto.setText(Double.toString(metodoscal.sin(Num1)));
                 
                 break;
                 
             case 6:
                 texto.setText(" ");
-                texto.setText(Double.toString(Math.cos(Num1)));
+                texto.setText(Double.toString(metodoscal.cos(Num1)));
                 break;
                 
             case 7:
                 texto.setText(" ");
-                texto.setText(Double.toString(Math.tan(Num1)));
+                texto.setText(Double.toString(metodoscal.tan(Num1)));
                 break;
                 
              case 8:
                 Num1=Double.parseDouble(texto.getText());
-                texto.setText(Double.toString(Math.pow(Num1,1/ Num2)));
+                texto.setText(Double.toString(metodoscal.Raiz(Num1,Num2)));
                 break;
                 
             case 9:
                 Num2=Double.parseDouble(texto.getText());
-                texto.setText(Double.toString(Math.pow(Num1,Num2)));
+                texto.setText(Double.toString(metodoscal.Potencia(Num1,Num2)));
                 break;
             case 10:
                 Num1=Double.parseDouble(texto.getText());
-                texto.setText(Double.toString( Num1*(Num2/100)));
+                texto.setText(Double.toString(metodoscal.IVA1(num1 , num2)));
                 break;
         }
     }//GEN-LAST:event_igualActionPerformed
